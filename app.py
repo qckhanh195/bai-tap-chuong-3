@@ -77,8 +77,8 @@ def index():
     return f"""
     {render_nav()}
     <h2>Thống kê thư viện</h2>
-    <p>Tổng số đầu sách: <strong>{total_books}</strong></p>
-    <p>Số sách sẵn sàng cho mượn: <strong>{available_books}</strong></p>
+    <p>Tổng số đầu sách: {total_books}</p>
+    <p>Số sách sẵn sàng cho mượn: {available_books}</p>
     """
 
 
@@ -118,7 +118,7 @@ def books():
     return f"""
     {render_nav()}
     <h2>Danh sách sách</h2>
-    <p><strong>Lọc theo thể loại:</strong> {category_bar}</p>
+    <p>Lọc theo thể loại: {category_bar}</p>
     <table border="1" cellpadding="8" cellspacing="0">
         <thead>
             <tr>
@@ -159,12 +159,12 @@ def book_detail(book_id):
     {render_nav()}
     <h2>Chi tiết sách</h2>
     <ul>
-        <li><strong>ID:</strong> {book['id']}</li>
-        <li><strong>Tiêu đề:</strong> {escape(book['title'])}</li>
-        <li><strong>Tác giả:</strong> {escape(book['author'])}</li>
-        <li><strong>Năm xuất bản:</strong> {escape(book['year'])}</li>
-        <li><strong>Thể loại:</strong> {escape(book['category'])}</li>
-        <li><strong>Trạng thái:</strong> {escape(status)}</li>
+        <li>ID: {book['id']}</li>
+        <li>Tiêu đề: {escape(book['title'])}</li>
+        <li>Tác giả: {escape(book['author'])}</li>
+        <li>Năm xuất bản: {escape(book['year'])}</li>
+        <li>Thể loại: {escape(book['category'])}</li>
+        <li>Trạng thái: {escape(status)}</li>
     </ul>
     <p><a href="{url_for('books')}">&larr; Quay lại danh sách</a></p>
     """
